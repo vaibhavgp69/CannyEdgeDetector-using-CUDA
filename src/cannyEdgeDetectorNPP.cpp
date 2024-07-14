@@ -129,8 +129,6 @@ int main(int argc, char *argv[]) {
     npp::ImageCPU_8u_C1 oHostSrc;
     // load gray-scale image from disk
     npp::loadImage(sFilename, oHostSrc);
-    // declare a device image and copy construct from the host image,
-    // i.e. upload host to device
     npp::ImageNPP_8u_C1 oDeviceSrc(oHostSrc);
 
     NppiSize oSrcSize = {(int)oDeviceSrc.width(), (int)oDeviceSrc.height()};
@@ -149,16 +147,6 @@ int main(int argc, char *argv[]) {
 
     cudaMalloc((void **)&pScratchBufferNPP, nBufferSize);
 
-    // now run the canny edge detection filter
-    // Using nppiNormL2 will produce larger magnitude values allowing for finer
-    // control of threshold values while nppiNormL1 will be slightly faster.
-    // Also, selecting the sobel gradient filter allows up to a 5x5 kernel size
-    // which can produce more precise results but is a bit slower. Commonly
-    // nppiNormL2 and sobel gradient filter size of 3x3 are used. Canny
-    // recommends that the high threshold value should be about 3 times the low
-    // threshold value. The threshold range will depend on the range of
-    // magnitude values that the sobel gradient filter generates for a
-    // particular image.
 
     Npp16s nLowThreshold = 72;
     Npp16s nHighThreshold = 256;
