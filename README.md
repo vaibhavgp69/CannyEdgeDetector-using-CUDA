@@ -17,6 +17,7 @@ This project implements the Canny edge detection algorithm using NVIDIA Performa
 
 ### Input Image
  - A cybertruck image is being used for this code
+
 ![image](https://github.com/user-attachments/assets/26970449-ac69-480f-8046-87d301c9c0db)
 
 ### Output Image
