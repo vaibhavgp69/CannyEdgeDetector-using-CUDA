@@ -12,6 +12,17 @@ This project implements the Canny edge detection algorithm using NVIDIA Performa
 - **Memory Management:** Efficient memory allocation and utilization strategies on the GPU to handle large image data.
 - **Input and Output Handling:** Loading images from disk, processing them on the GPU, and saving the resulting edge-detected images.
 
+
+## Results
+
+### Input Image
+ - A cybertruck image is being used for this code
+![image](https://github.com/user-attachments/assets/26970449-ac69-480f-8046-87d301c9c0db)
+
+### Output Image
+![image](https://github.com/user-attachments/assets/26a1a49e-b406-470e-8187-2528f1497e2f)
+
+
 ## Code Organization
 
 ### Directory Structure
@@ -38,4 +49,6 @@ After building, execute the Canny edge detector using:
 ```bash
 make run
 ```
+
+
 
